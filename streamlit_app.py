@@ -7,7 +7,7 @@ import pandas as pd
 
 
 st.sidebar.header("This is a Test")
-col2.header("Routing Generator")
+
 query_name = st.text_input("Filter name")
 #query_age = st.text_input2("Filter name")
 
