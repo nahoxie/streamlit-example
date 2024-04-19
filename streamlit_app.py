@@ -7,7 +7,7 @@ import pandas as pd
 
 
 query_name = st.text_input("Filter name")
-query_age = st.text_input("Filter name")
+query_age = st.text_input2("Filter name")
 
 # Create a sample dataframe
 data = {
