@@ -16,7 +16,7 @@ data = {
     "City": ["New York", "Los Angeles", "Chicago"],
 }
 df = pd.DataFrame(data)
-filtered_df = df[df["Par"].str.contains(query, case=False)]
+filtered_df = df[df["Name"].str.contains(query, case=False)]
 
 # Display the editable dataframe
 edited_df = st.experimental_data_editor(filtered_df)
