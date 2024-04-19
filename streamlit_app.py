@@ -6,8 +6,8 @@ import streamlit as st
 import pandas as pd
 
 
-query = st.text_input("Filter dataframe")
-
+query_name = st.text_input("Filter name")
+query_age = st.text_input("Filter name")
 
 # Create a sample dataframe
 data = {
@@ -16,9 +16,9 @@ data = {
     "City": ["New York", "Los Angeles", "Chicago"],
 }
 df = pd.DataFrame(data)
-filtered_df = df[df["Name"].str.contains(query, case=False)]
-
+filtered_df = df[df["Name"].str.contains(query_name, case=False)]
+filter_df_age = filtered_df[filtered_df["Age"].str.contains(query_age, case=False)]
 # Display the editable dataframe
-edited_df = st.experimental_data_editor(filtered_df)
+edited_df = st.experimental_data_editor(filter_df_age)
 st.write("Edited Dataframe:")
 st.write(edited_df)
