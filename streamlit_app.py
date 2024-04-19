@@ -32,8 +32,5 @@ data = pd.read_sql(query)
 # Display the retrieved data in Streamlit
 st.write("Data from Databricks:", data)
 
-# Close the connection
-conn.close()
-
 if __name__ == "__main__":
     main()
