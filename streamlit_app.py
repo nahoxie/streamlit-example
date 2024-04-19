@@ -17,7 +17,7 @@ data = {
 }
 df = pd.DataFrame(data)
 filtered_df = df[df["Name"].str.contains(query_name, case=False)]
-filter_df_age = filtered_df[filtered_df["Age"].str.contains(query_age, case=False)]
+filter_df_age = filtered_df[df["Age"].str.contains(query_age, case=False)]
 # Display the editable dataframe
 edited_df = st.experimental_data_editor(filter_df_age)
 st.write("Edited Dataframe:")
