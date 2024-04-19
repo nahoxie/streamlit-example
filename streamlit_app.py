@@ -9,22 +9,34 @@ import streamlit as st
 
 """
 def main():
-    st.title("Grid Layout Example")
+    st.title("Editable Grid Example")
 
-    # Define the number of rows and columns in the grid
-    num_rows = 5
-    num_cols = 5
+    # Sample data for the grid
+    data = {
+        'Name': ['John', 'Alice', 'Bob'],
+        'Age': [30, 25, 35],
+        'Gender': ['Male', 'Female', 'Male']
+    }
 
-    # Create a grid layout using columns
-    for i in range(num_rows):
-        cols = st.columns(num_cols)
-        for j in range(num_cols):
-            # Display content in each grid cell
-            cols[j].write(f"Row {i + 1}, Column {j + 1}")
+    # Create a DataFrame from the data
+    df = pd.DataFrame(data)
+
+    # Display the DataFrame as an editable table
+    edited_df = st.table(df)
+
+    # Allow users to edit the data
+    for i in range(len(df)):
+        for col in df.columns:
+            # For each cell, create a text input for editing
+            new_value = st.text_input(f'Edit {col} for row {i+1}', df.iloc[i][col])
+            # Update the DataFrame with the new value
+            df.at[i, col] = new_value
+
+    # Display the updated DataFrame
+    st.write("Updated DataFrame:", df)
 
 if __name__ == "__main__":
     main()
-
 
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
