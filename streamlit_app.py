@@ -8,8 +8,7 @@ import streamlit as st
 
 
 """
-c=st.empty()
-st.write("Shows first line")
+st.expander(label, expanded=False)
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
 
