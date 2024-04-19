@@ -8,7 +8,24 @@ import streamlit as st
 
 
 """
-st.expander(label, expanded=False)
+def main():
+    st.title("Grid Layout Example")
+
+    # Define the number of rows and columns in the grid
+    num_rows = 3
+    num_cols = 3
+
+    # Create a grid layout using columns
+    for i in range(num_rows):
+        cols = st.columns(num_cols)
+        for j in range(num_cols):
+            # Display content in each grid cell
+            cols[j].write(f"Row {i + 1}, Column {j + 1}")
+
+if __name__ == "__main__":
+    main()
+
+
 num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
 num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
 
