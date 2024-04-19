@@ -17,7 +17,7 @@ data = {
     "Active":[False,True,False,False]
 }
 df = pd.DataFrame(data)
-filtered_df = df[df["DPP"].str.contains(DPP, case=False)]
+filtered_df = df[df["DPP"].str.contains(query_name, case=False)]
 #filter_df_age = filtered_df[df["Age"].str.contains(query_age, case=False)]
 # Display the editable dataframe
 edited_df = st.experimental_data_editor(filtered_df)
