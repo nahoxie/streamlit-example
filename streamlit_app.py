@@ -8,8 +8,8 @@ import pandas as pd
 
 st.sidebar.header("This is a Test")
 
-query_name = st.text_input("Filter name")
-#query_age = st.text_input2("Filter name")
+query_name = st.sidebar.text_input("Filter name")
+
 
 # Create a sample dataframe
 data = {
