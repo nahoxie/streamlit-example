@@ -15,7 +15,7 @@ def main():
     st.title("Data Retrieval from Databricks Example")
 
     # Connect to Databricks cluster
-    conn = dbapi.connect(host='adb-3247355026438266.6.azuredatabricks.net', token=DB_KEY)
+    conn = dbapi.connect(host=HOST, token=DB_KEY)
 
     # Execute SQL query to retrieve data
     cursor = conn.cursor()
