@@ -18,7 +18,7 @@ data = {
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]
 }
-df = pd.DataFrame(data)
+col2.df = pd.DataFrame(data)
 filtered_df = df[df["DPP"].str.contains(query_name, case=False)]
 #filter_df_age = filtered_df[df["Age"].str.contains(query_age, case=False)]
 # Display the editable dataframe
