@@ -12,8 +12,8 @@ def main():
     st.title("Grid Layout Example")
 
     # Define the number of rows and columns in the grid
-    num_rows = 3
-    num_cols = 3
+    num_rows = 5
+    num_cols = 5
 
     # Create a grid layout using columns
     for i in range(num_rows):
