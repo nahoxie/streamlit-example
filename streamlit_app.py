@@ -30,37 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-def main():
-    st.title("Editable Grid Example")
-
-    # Sample data for the grid
-    data = {
-        'Name': ['John', 'Alice', 'Bob'],
-        'Age': [30, 25, 35],
-        'Gender': ['Male', 'Female', 'Male']
-    }
-
-    # Create a DataFrame from the data
-    df = pd.DataFrame(data)
-
-    # Display the DataFrame as an editable table
-    edited_df = st.table(df)
-
-    # Allow users to edit the data
-    for i in range(len(df)):
-        for col in df.columns:
-            # For each cell, create a text input for editing
-            new_value = st.text_input(f'Edit {col} for row {i+1}', df.iloc[i][col])
-            # Update the DataFrame with the new value
-            df.at[i, col] = new_value
-
-    # Display the updated DataFrame
-    st.write("Updated DataFrame:", df)
-
-if __name__ == "__main__":
-    main()
-
