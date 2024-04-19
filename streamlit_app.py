@@ -1,8 +1,13 @@
+
 import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
 import pandas as pd
+
+
+query = st.text_input("Filter dataframe")
+
 
 # Create a sample dataframe
 data = {
@@ -11,8 +16,9 @@ data = {
     "City": ["New York", "Los Angeles", "Chicago"],
 }
 df = pd.DataFrame(data)
+filtered_df = df[df["Par"].str.contains(query, case=False)]
 
 # Display the editable dataframe
-edited_df = st.experimental_data_editor(df)
+edited_df = st.experimental_data_editor(filtered_df)
 st.write("Edited Dataframe:")
 st.write(edited_df)
