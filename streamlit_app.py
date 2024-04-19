@@ -8,6 +8,32 @@ import streamlit as st
 
 
 """
+
+from databricks import dbapi
+
+def main():
+    st.title("Data Retrieval from Databricks Example")
+
+    # Connect to Databricks cluster
+    conn = dbapi.connect(host='adb-3247355026438266.6.azuredatabricks.net', token='dapi422ea597f79c9a7006cfa4c8565efc92')
+
+    # Execute SQL query to retrieve data
+    cursor = conn.cursor()
+    cursor.execute('Select machine_downtime_key,downtime_duration_hrs,site_key from dap_enterprise.machine_downtime limit 10')
+    data = cursor.fetchall()
+
+    # Display the retrieved data in Streamlit
+    st.write("Data from Databricks:", data)
+
+    # Close the connection
+    conn.close()
+
+if __name__ == "__main__":
+    main()
+
+
+
+
 def main():
     st.title("Editable Grid Example")
 
@@ -38,28 +64,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
-num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
-
-indices = np.linspace(0, 1, num_points)
-theta = 2 * np.pi * num_turns * indices
-radius = indices
-
-x = radius * np.cos(theta)
-y = radius * np.sin(theta)
-
-df = pd.DataFrame({
-    "x": x,
-    "y": y,
-    "idx": indices,
-    "rand": np.random.randn(num_points),
-})
-
-st.altair_chart(alt.Chart(df, height=1200, width=1200)
-    .mark_point(filled=True)
-    .encode(
-        x=alt.X("x", axis=None),
-        y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
-        size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
