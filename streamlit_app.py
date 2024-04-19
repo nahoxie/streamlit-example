@@ -18,11 +18,11 @@ st.sidebar.header("This is a Test")
 
 query_name = st.sidebar.text_input("DPP")
 
-first_filter = st.multiselect("Select DPP", default=df["DPP"].unique())
+first_filter = st.multiselect("Select DPP", default=["DPP1","DPP2"])
 df2 = df.query("Source == @first_filter")
 
 # Second filter
-second_filter = st.multiselect("Select Source", default=df2["Source"].unique())
+second_filter = st.sidebar.multiselect("Select Source",default=["OSW-HM"]))
 df3 = df2.query("Source == @second_filter")
 
 
