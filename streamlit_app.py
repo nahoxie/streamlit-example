@@ -14,6 +14,7 @@ data = {
     "Name": ["Alice", "Bob", "Charlie"],
     "Age": [25, 30, 22],
     "City": ["New York", "Los Angeles", "Chicago"],
+    "Active":[False,True,False]
 }
 df = pd.DataFrame(data)
 filtered_df = df[df["Name"].str.contains(query_name, case=False)]
