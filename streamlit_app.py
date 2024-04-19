@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 
-
+col1, col2 = st.columns(2)
 query_name = st.text_input("Filter name")
 #query_age = st.text_input2("Filter name")
 
