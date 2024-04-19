@@ -5,8 +5,8 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 
-col1, col2 = st.columns(2)
-col1.header("This is a Test")
+
+st.sidebar.header("This is a Test")
 col2.header("Routing Generator")
 query_name = st.text_input("Filter name")
 #query_age = st.text_input2("Filter name")
@@ -18,7 +18,7 @@ data = {
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]
 }
-col2.df = pd.DataFrame(data)
+df = pd.DataFrame(data)
 filtered_df = df[df["DPP"].str.contains(query_name, case=False)]
 #filter_df_age = filtered_df[df["Age"].str.contains(query_age, case=False)]
 # Display the editable dataframe
