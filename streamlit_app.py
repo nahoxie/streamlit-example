@@ -11,10 +11,10 @@ query_name = st.text_input("Filter name")
 
 # Create a sample dataframe
 data = {
-    "Name": ["Alice", "Bob", "Charlie"],
-    "Age": [25, 30, 22],
-    "City": ["New York", "Los Angeles", "Chicago"],
-    "Active":[False,True,False]
+    "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
+    "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
+    "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
+    "Active":[False,True,False,False]
 }
 df = pd.DataFrame(data)
 filtered_df = df[df["Name"].str.contains(query_name, case=False)]
