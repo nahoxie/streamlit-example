@@ -29,11 +29,11 @@ engine = sqlalchemy.create_engine(
 query = "Select machine_downtime_key,downtime_duration_hrs,site_key from dap_enterprise.machine_downtime limit 10"
 data = pd.read_sql(query)
 
-    # Display the retrieved data in Streamlit
-    st.write("Data from Databricks:", data)
+# Display the retrieved data in Streamlit
+st.write("Data from Databricks:", data)
 
-    # Close the connection
-    conn.close()
+# Close the connection
+conn.close()
 
 if __name__ == "__main__":
     main()
