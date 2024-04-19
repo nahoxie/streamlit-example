@@ -28,8 +28,7 @@ df3 = df2.query("Source == @second_filter")
 
 # Create a sample dataframe
 
-filtered_df = df[df["DPP"].str.contains(query_name, case=False)]
-#filter_df_age = filtered_df[df["Age"].str.contains(query_age, case=False)]
+
 # Display the editable dataframe
 edited_df = st.experimental_data_editor(df3)
 st.write("Edited Dataframe:")
