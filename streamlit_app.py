@@ -26,7 +26,7 @@ data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
 start_date = datetime.now()
 
 # Generate a sequence of dates for the next 18 months
-date_range = [start_date + relativedelta(month=i) for i in range(18)]
+date_range = [start_date + relativedelta(months=i) for i in range(18)]
 
 # Create a DataFrame with the dates
 df_demand = pd.DataFrame(date_range, columns=['Date'])
