@@ -28,10 +28,6 @@ st.sidebar.header("Selection Criteria")
 first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
-def download_csv(df):
-    csv = df.to_csv(index=False).encode('utf-8')
-    st.markdown(download_csv(), unsafe_allow_html=True)
-
 
 
 with tab1:
@@ -48,8 +44,6 @@ with tab3:
 
 with tab4:
   st.header("Download")
-  st.markdown(download_csv(), unsafe_allow_html=True)
-  download_csv(df)  # Add the download button
 
 
 
