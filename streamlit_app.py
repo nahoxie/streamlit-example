@@ -16,24 +16,8 @@ data = {
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]}
 
-
-with tab1:
-   st.header("Planned DT")
-   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
-   
-with tab2:
-  st.header("Routing")
-  # Display the editable dataframe
-edited_df = st.experimental_data_editor(df)
-st.write("Edited Dataframe:")
-st.write(edited_df)
-
-
 df = pd.DataFrame(data)
-
-
 st.sidebar.header("Selection Criteria")
-
 query_name = st.sidebar.text_input("DPP")
 
 first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
@@ -44,7 +28,19 @@ second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 df3 = df2.query("Source == @second_filter")
 
 
-# Create a sample dataframe
+
+with tab1:
+   st.header("Planned DT")
+
+   
+with tab2:
+  st.header("Routing")
+  # Display the editable dataframe
+edited_df = st.experimental_data_editor(df)
+st.write("Edited Dataframe:")
+st.write(edited_df)
+
+
 
 
 
