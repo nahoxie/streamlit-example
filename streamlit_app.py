@@ -22,7 +22,7 @@ data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
                   "Month":["April 2024","May 2024"],
                   "Hours":[72,24]}
 
-start_date = datetime.today().date()
+start_date = datetime.now()
 
 # Generate a sequence of dates for the next 18 months
 date_range = [start_date + relativedelta(month=i) for i in range(18)]
