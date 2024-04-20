@@ -37,7 +37,7 @@ if navigation == "Home":
 elif navigation == "About":
     about()
 elif navigation == "Contact":
-    contact()
+    contact())
 
 #Tabs    
 tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
