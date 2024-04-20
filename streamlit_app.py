@@ -25,8 +25,6 @@ df_data_planned_dt=pd.DataFrame(data_planned_dt)
 
 #Sidebar
 st.sidebar.header("Selection Criteria")
-query_name = st.sidebar.text_input("DPP")
-
 first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 df2 = df.query("Source == @first_filter")
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
