@@ -32,7 +32,7 @@ def download_csv(df):
     csv = df_route.to_csv(index=False).encode('utf-8')
     st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
 
-download_csv(df_route)
+
 
 with tab1:
    st.header("Planned DT")
@@ -48,7 +48,7 @@ with tab3:
 
 with tab4:
   st.header("Download")
-
+  download_csv(df_route)
 
 
 
