@@ -44,6 +44,15 @@ with tab3:
   # Display the editable dataframe
 
 
+def download_csv(df):
+    csv = df.to_csv(index=False).encode('utf-8')
+    st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
+
+# Example usage:
+st.write(df)  # Display the DataFrame in your Streamlit app
+download_csv(df)
+
+
 
 
 
