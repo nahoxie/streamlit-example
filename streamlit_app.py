@@ -41,14 +41,6 @@ elif button_about:
 elif button_contact:
     contact()
 
-# Display the selected page based on navigation
-if navigation == "Home":
-    homepage()
-elif navigation == "About":
-    about()
-elif navigation == "Contact":
-    contact()
-
 #Tabs    
 tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
 
