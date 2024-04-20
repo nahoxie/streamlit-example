@@ -1,5 +1,5 @@
 
-from streamlit_apex_charts import bar_chart
+
 import altair as alt
 import numpy as np
 import pandas as pd
@@ -9,6 +9,7 @@ import streamlit as st
 import pandas as pd
 import io
 import zipfile
+from streamlit_apex_charts import line_chart, bar_chart
 
 
 
