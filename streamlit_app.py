@@ -30,7 +30,7 @@ def contact():
 
 # Sidebar navigation
 
-with st.sideber
+with st.sidebar:
     selected = option_menu(
         menu_title = "Main Menu",
         options = ["Home","Project","Contacts"])
