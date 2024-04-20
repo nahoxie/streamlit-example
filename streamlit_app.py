@@ -9,7 +9,7 @@ import streamlit as st
 import pandas as pd
 import io
 import zipfile
-
+from streamlit_option_menu import option_menu
 
 st.set_page_config(
     page_title="Multi-page App",
@@ -30,32 +30,10 @@ def contact():
 
 # Sidebar navigation
 
-container = st.container()
-
-# Add buttons to the container
-with container:
-   st.title("Button Container")
-   st.markdown(
-        """
-        <style>
-        .horizontal-buttons > * {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        </style>
-        """
-    )  
-button_home = st.button("Home",key="home")
-button_about = st.button("About", key="about")
-button_contact = st.button("Contact", key="contact")
-
-# Display the selected page based on button clicks
-if button_home:
-    homepage()
-elif button_about:
-    about()
-elif button_contact:
-    contact()
+with st.sideber
+    selected = option_menu(
+        menu_title = "Main Menu",
+        options = ["Home","Project","Contacts"])
 
 #Tabs    
 tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
