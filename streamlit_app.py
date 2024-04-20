@@ -14,7 +14,7 @@ import zipfile
 def home():
     st.title("Home Page")
     st.write("This is the home page.")
-    st.markdown("Go to [Pages](#Multipage)")
+    st.markdown("Go to https://github.com/nahoxie/streamlit-example/blob/master/streamlit_app/pages/MultiPage")
 
 def about():
     st.title("About Page")
