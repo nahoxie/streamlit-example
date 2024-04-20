@@ -34,7 +34,8 @@ container = st.container()
 
 # Add buttons to the container
 with container:
-   st.markdown(
+   st.title("Button Container")
+st.markdown(
         """
         <style>
         .horizontal-buttons > * {
