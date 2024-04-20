@@ -19,3 +19,8 @@ data_route = {
     "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]}
+
+
+st.data_editor(df_route,num_rows="dynamic")
+  st.first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
+  st.second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
