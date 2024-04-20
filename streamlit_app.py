@@ -5,19 +5,29 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 
-tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
 
-with tab1:
-   st.header("A cat")
-   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
 
-with tab2:
-  st.header("Dog")
+
+tab1, tab2, tab3 = st.tabs(["Planned DT", "Routing", "Recovery"])
+
 data = {
     "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
     "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]
+
+
+with tab1:
+   st.header("Planned DT")
+   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+   
+with tab2:
+  st.header("Routing")
+  # Display the editable dataframe
+   edited_df = st.experimental_data_editor(df)
+   st.write("Edited Dataframe:")
+   st.write(edited_df)
+
 }
 df = pd.DataFrame(data)
 
@@ -37,7 +47,4 @@ df3 = df2.query("Source == @second_filter")
 # Create a sample dataframe
 
 
-# Display the editable dataframe
-edited_df = st.experimental_data_editor(df)
-st.write("Edited Dataframe:")
-st.write(edited_df)
+
