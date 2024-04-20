@@ -34,7 +34,6 @@ container = st.container()
 
 # Add buttons to the container
 with container:
-
    st.markdown(
         """
         <style>
