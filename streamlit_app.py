@@ -78,7 +78,7 @@ with tab3:
 with tab4:
   st.header("Demand")
   edited_demand_data= st.data_editor(df_demand_pivot,num_rows="dynamic")
-  st.line_chart(edited_demand_data,x="Date")
+  st.line_chart(edited_demand_data,x='Date')
 with tab5:
   st.header("Download")
   
