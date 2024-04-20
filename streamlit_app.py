@@ -48,7 +48,7 @@ with tab3:
 
 with tab4:
   st.header("Download")
-  st.download_csv(df)  # Add the download button
+  download_csv(df)  # Add the download button
 
 
 
