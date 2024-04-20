@@ -30,6 +30,6 @@ df3 = df2.query("Source == @second_filter")
 
 
 # Display the editable dataframe
-edited_df = st.experimental_data_editor(df3)
+edited_df = st.experimental_data_editor(df)
 st.write("Edited Dataframe:")
 st.write(edited_df)
