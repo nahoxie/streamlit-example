@@ -35,9 +35,9 @@ with tab1:
    
 with tab2:
   st.header("Routing")
-    edited_df = st.experimental_data_editor(df)
-    st.write("Edited Dataframe:")
-    st.write(edited_df)
+edited_df = st.experimental_data_editor(df)
+st.write("Edited Dataframe:")
+st.write(edited_df)
 
   # Display the editable dataframe
 
