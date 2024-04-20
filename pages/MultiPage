@@ -1,3 +1,5 @@
+
+
 import altair as alt
 import numpy as np
 import pandas as pd
@@ -7,3 +9,13 @@ import streamlit as st
 import pandas as pd
 import io
 import zipfile
+
+
+#Tabs    
+tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
+
+data_route = {
+    "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
+    "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
+    "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
+    "Active":[False,True,False,False]}
