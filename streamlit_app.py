@@ -10,13 +10,18 @@ import pandas as pd
 
 tab1, tab2, tab3 = st.tabs(["Planned DT", "Routing", "Recovery"])
 
-data = {
+data_route = {
     "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
     "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
     "Sink": ["OSW-CM72", "OSW-88", "KIN-CM1","LOG-CM4"],
     "Active":[False,True,False,False]}
 
-df = pd.DataFrame(data)
+data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
+                  "Month":["April 2024","May 2024"],
+                  "Hours":[72,90,24]}
+
+df_route = pd.DataFrame(data_route)
+df_data_planned_dt=pd.DataFrame(data_planned_dt)
 st.sidebar.header("Selection Criteria")
 query_name = st.sidebar.text_input("DPP")
 
@@ -31,13 +36,14 @@ df3 = df2.query("Source == @second_filter")
 
 with tab1:
    st.header("Planned DT")
-
+   st.edited_df_planned_dt = st.experimental_data_editor(df_data_planned_dt)
+   st.write(edited_df_planned_dt)
    
 with tab2:
   st.header("Routing")
-edited_df = st.experimental_data_editor(df)
-st.write("Edited Dataframe:")
-st.write(edited_df)
+  st.edited_df = st.experimental_data_editor(df)
+  st.write("Edited Dataframe:")
+  st.write(edited_df)
 
 with tab3:
   st.header("Recovery")
