@@ -2,7 +2,7 @@
 import altair as alt
 import numpy as np
 import pandas as pd
-from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 import streamlit as st
 import pandas as pd
 import io
@@ -25,7 +25,7 @@ data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
 start_date = datetime.today().date()
 
 # Generate a sequence of dates for the next 18 months
-date_range = [start_date + timedelta(month=i) for i in range(18)]
+date_range = [start_date + relativedelta(month=i) for i in range(18)]
 
 # Create a DataFrame with the dates
 df_demand = pd.DataFrame(date_range, columns=['Date'])
