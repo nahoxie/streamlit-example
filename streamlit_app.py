@@ -34,8 +34,19 @@ container = st.container()
 
 # Add buttons to the container
 with container:
-    st.title("Button Container")
-    st.write("Click on the buttons below:")
+
+   st.markdown(
+        """
+        <style>
+        .horizontal-buttons > * {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        </style>
+        """
+    )
+
+    
     button_home = st.button("Home")
     button_about = st.button("About")
     button_contact = st.button("Contact")
