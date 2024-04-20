@@ -31,6 +31,9 @@ date_range = [start_date + relativedelta(months=i) for i in range(18)]
 # Create a DataFrame with the dates
 df_demand = pd.DataFrame(date_range, columns=['Date'])
 df_demand_pivot = df_demand.transpose()
+df_demand_pivot.columns = df_demand_pivot.iloc[0]
+df_demand_pivot = df_demand_pivot[1:]
+
 
 df_route = pd.DataFrame(data_route)
 df_data_planned_dt=pd.DataFrame(data_planned_dt)
