@@ -11,9 +11,25 @@ import io
 import zipfile
 
 
-st.set_page_config(
-    page_title="Multi-page App",
-    layout="wide" )
+def home():
+    st.title("Home Page")
+    st.write("This is the home page.")
+    st.markdown("Go to [About](#about)")
+
+def about():
+    st.title("About Page")
+    st.write("This is the about page.")
+    st.markdown("Go to [Home](#home)")
+
+# Define navigation
+page = st.sidebar.radio("Navigate", ["Home", "About"])
+
+# Render selected page
+if page == "Home":
+    home()
+elif page == "About":
+    about()
+
 
 
 def homepage():
