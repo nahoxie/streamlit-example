@@ -18,7 +18,7 @@ data_route = {
 
 data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
                   "Month":["April 2024","May 2024"],
-                  "Hours":[72,90,24]}
+                  "Hours":[72,24]}
 
 df_route = pd.DataFrame(data_route)
 df_data_planned_dt=pd.DataFrame(data_planned_dt)
