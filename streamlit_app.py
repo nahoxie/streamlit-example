@@ -22,13 +22,13 @@ data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
 
 df_route = pd.DataFrame(data_route)
 df_data_planned_dt=pd.DataFrame(data_planned_dt)
+
+#Sidebar
 st.sidebar.header("Selection Criteria")
 query_name = st.sidebar.text_input("DPP")
 
 first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 df2 = df.query("Source == @first_filter")
-
-# Second filter
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 df3 = df2.query("Source == @second_filter")
 
@@ -47,7 +47,6 @@ with tab2:
 
 with tab3:
   st.header("Recovery")
-  # Display the editable dataframe
 
 
 def download_csv(df):
