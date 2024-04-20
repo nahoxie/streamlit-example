@@ -24,3 +24,11 @@ data_route = {
 st.data_editor(df_route,num_rows="dynamic")
   st.first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
   st.second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
+
+st.markdown("# Plotting Demo")
+st.sidebar.header("Plotting Demo")
+st.write(
+    """This demo illustrates a combination of plotting and animation with
+Streamlit. We're generating a bunch of random numbers in a loop for around
+5 seconds. Enjoy!"""
+)
