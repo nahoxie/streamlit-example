@@ -8,7 +8,7 @@ import pandas as pd
 
 
 
-tab1, tab2, tab3 = st.tabs(["Planned DT", "Routing", "Recovery"])
+tab1, tab2, tab3, tab4 = st.tabs(["Planned DT", "Routing", "Recovery","Download"])
 
 data_route = {
     "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
@@ -31,6 +31,9 @@ second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
 
 
+
+
+
 with tab1:
    st.header("Planned DT")
    st.data_editor(df_data_planned_dt)
@@ -43,7 +46,15 @@ with tab2:
 with tab3:
   st.header("Recovery")
 
+with tab4:
+  st.header("Download")
+  def download_csv(df):
+    csv = df.to_csv(index=False).encode('utf-8')
+    st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
 
+# Example usage:
+st.write(df)  # Display the DataFrame in your Streamlit app
+download_csv(df)  # Add the download button
 
 
 
