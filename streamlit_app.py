@@ -49,7 +49,6 @@ def download_csv(df):
     st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
 
 # Example usage:
-st.write(df)  # Display the DataFrame in your Streamlit app
 download_csv(df)
 
 
