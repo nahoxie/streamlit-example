@@ -11,8 +11,35 @@ import io
 import zipfile
 
 
+st.set_page_config(
+    page_title="Multi-page App",
+    layout="wide"
 
 
+def homepage():
+    st.title("Home Page")
+    st.write("This is the home page.")
+
+def about():
+    st.title("About Page")
+    st.write("This is the about page.")
+
+def contact():
+    st.title("Contact Page")
+    st.write("This is the contact page.")
+
+# Sidebar navigation
+navigation = st.sidebar.radio("Navigation", ["Home", "About", "Contact"])
+
+# Display the selected page based on navigation
+if navigation == "Home":
+    homepage()
+elif navigation == "About":
+    about()
+elif navigation == "Contact":
+    contact()
+
+#Tabs    
 tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
 
 data_route = {
