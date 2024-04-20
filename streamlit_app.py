@@ -28,9 +28,7 @@ st.sidebar.header("Selection Criteria")
 first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
-
-
-  def download_csv(df):
+def download_csv(df):
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
 
