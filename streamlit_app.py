@@ -26,8 +26,7 @@ df_data_planned_dt=pd.DataFrame(data_planned_dt)
 
 #Sidebar
 st.sidebar.header("Selection Criteria")
-first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
-second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
+
 
 csv =  {"data1.csv": df_route.to_csv(index=False), 
           "data2.csv": df_data_planned_dt.to_csv(index=False)}
@@ -50,12 +49,13 @@ st.download_button(
 with tab1:
    st.header("Planned DT")
    st.data_editor(df_data_planned_dt)
-  
+   asset = st.sidebar.multiselect('Select Month',["April","May"])
    
 with tab2:
   st.header("Routing")
   st.data_editor(df_route)
-  
+  first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
+  second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 with tab3:
   st.header("Recovery")
 
