@@ -49,13 +49,13 @@ st.download_button(
 with tab1:
    st.header("Planned DT")
    st.data_editor(df_data_planned_dt)
-   asset = st.sidebar.multiselect('Select Month',["April","May"])
+   st.asset = st.sidebar.multiselect('Select Month',["April","May"])
    
 with tab2:
   st.header("Routing")
   st.data_editor(df_route)
-  first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
-  second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
+  st.first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
+  st.second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 with tab3:
   st.header("Recovery")
 
