@@ -5,6 +5,14 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 
+tab1, tab2, tab3 = st.tabs(["Cat", "Dog", "Owl"])
+
+with tab1:
+   st.header("A cat")
+   st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+
+with tab2:
+  st.header("Dog")
 data = {
     "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
     "Source": ["OSW-HM", "OSW-HM", "OSW-HM","OSW-HM"],
@@ -14,7 +22,7 @@ data = {
 df = pd.DataFrame(data)
 
 
-st.sidebar.header("This is a Test")
+st.sidebar.header("Selection Criteria")
 
 query_name = st.sidebar.text_input("DPP")
 
