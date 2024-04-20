@@ -25,10 +25,10 @@ data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
 start_date = datetime.today().date()
 
 # Generate a sequence of dates for the next 18 months
-date_range = [start_date + timedelta(days=30*i) for i in range(18)]
+date_range = [start_date + timedelta(month=i) for i in range(18)]
 
 # Create a DataFrame with the dates
-df_demand = pd.DataFrame(date_range, rows=['Date'])
+df_demand = pd.DataFrame(date_range, columns=['Date'])
 
 
 df_route = pd.DataFrame(data_route)
