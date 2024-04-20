@@ -51,7 +51,7 @@ with tab4:
   def download_csv(df):
     csv = df.to_csv(index=False).encode('utf-8')
     st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
-    st.download_csv(df)  # Add the download button
+  st.download_csv(df)  # Add the download button
 
 
 
