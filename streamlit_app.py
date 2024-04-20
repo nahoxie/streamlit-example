@@ -48,6 +48,7 @@ with tab3:
 
 with tab4:
   st.header("Download")
+  st.markdown(download_csv(), unsafe_allow_html=True)
   download_csv(df)  # Add the download button
 
 
