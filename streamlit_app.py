@@ -28,7 +28,7 @@ start_date = datetime.today().date()
 date_range = [start_date + timedelta(days=30*i) for i in range(18)]
 
 # Create a DataFrame with the dates
-df_demand = pd.DataFrame(date_range, columns=['Date'])
+df_demand = pd.DataFrame(date_range, rows=['Date'])
 
 
 df_route = pd.DataFrame(data_route)
