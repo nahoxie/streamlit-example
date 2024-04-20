@@ -48,17 +48,18 @@ st.download_button(
 
 with tab1:
    st.header("Planned DT")
-   st.data_editor(df_data_planned_dt)
+   st.data_editor(df_data_planned_dt,num_rows=editable)
    st.asset = st.sidebar.multiselect('Select Month',["April","May"])
    
 with tab2:
   st.header("Routing")
-  st.data_editor(df_route)
+  st.data_editor(df_route,num_rows=editable)
   st.first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
   st.second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
+
 with tab3:
   st.header("Recovery")
-
+  
 with tab4:
   st.header("Download")
   
