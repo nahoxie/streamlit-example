@@ -44,23 +44,7 @@ df_data_planned_dt=pd.DataFrame(data_planned_dt)
 st.sidebar.header("Selection Criteria")
 
 
-csv =  {"route.csv": df_route.to_csv(index=False), 
-          "data_planned_dt.csv": df_data_planned_dt.to_csv(index=False),
-        "demand_data.csv": df_demand_pivot.to_csv(index=False)}
- 
 
-
-zip_buffer = io.BytesIO()
-with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
-    for file_name, data in csv.items():
-        zip_file.writestr(file_name, data.encode("utf-8"))
-
-# Display a download button for the zip file
-st.download_button(
-    label="Download All DataFrames as Zip",
-    data=zip_buffer,
-    file_name="my_dataframes.zip",
-    mime="application/zip",
 )
 
 with tab1:
@@ -84,7 +68,23 @@ with tab4:
   st.bar_chart(chart_demand_data)
 with tab5:
   st.header("Download")
-  
+  csv =  {"route.csv": df_route.to_csv(index=False), 
+          "data_planned_dt.csv": df_data_planned_dt.to_csv(index=False),
+        "demand_data.csv": df_demand_pivot.to_csv(index=False)}
+ 
+
+
+zip_buffer = io.BytesIO()
+with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
+    for file_name, data in csv.items():
+        zip_file.writestr(file_name, data.encode("utf-8"))
+
+# Display a download button for the zip file
+st.download_button(
+    label="Download All DataFrames as Zip",
+    data=zip_buffer,
+    file_name="my_dataframes.zip",
+    mime="application/zip",
  
   
 
