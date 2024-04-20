@@ -29,7 +29,17 @@ def contact():
     st.write("This is the contact page.")
 
 # Sidebar navigation
-navigation = st.sidebar.radio("Navigation", ["Home", "About", "Contact"])
+button_home = st.button("Home")
+button_about = st.button("About")
+button_contact = st.button("Contact")
+
+# Display the selected page based on button clicks
+if button_home:
+    homepage()
+elif button_about:
+    about()
+elif button_contact:
+    contact()
 
 # Display the selected page based on navigation
 if navigation == "Home":
