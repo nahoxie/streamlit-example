@@ -34,7 +34,7 @@ second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 with tab1:
    st.header("Planned DT")
    st.edited_df_planned_dt = st.experimental_data_editor(df_data_planned_dt)
-   st.write(edited_df_planned_dt)
+  
    
 with tab2:
   st.header("Routing")
