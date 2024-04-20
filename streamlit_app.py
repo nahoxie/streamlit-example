@@ -36,7 +36,7 @@ def download_csv(df):
 
 zip_buffer = io.BytesIO()
 with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
-    for file_name, data in csv_data.items():
+    for file_name, data in csv.items():
         zip_file.writestr(file_name, data.encode("utf-8"))
 
 # Display a download button for the zip file
