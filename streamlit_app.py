@@ -39,6 +39,8 @@ edited_df = st.experimental_data_editor(df)
 st.write("Edited Dataframe:")
 st.write(edited_df)
 
+with tab3:
+  st.header("Recovery")
   # Display the editable dataframe
 
 
