@@ -29,9 +29,16 @@ def contact():
     st.write("This is the contact page.")
 
 # Sidebar navigation
-button_home = st.button("Home")
-button_about = st.button("About")
-button_contact = st.button("Contact")
+
+container = st.container()
+
+# Add buttons to the container
+with container:
+    st.title("Button Container")
+    st.write("Click on the buttons below:")
+        button_home = st.button("Home")
+        button_about = st.button("About")
+        button_contact = st.button("Contact")
 
 # Display the selected page based on button clicks
 if button_home:
