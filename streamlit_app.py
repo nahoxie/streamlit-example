@@ -38,10 +38,8 @@ with tab1:
    
 with tab2:
   st.header("Routing")
-  edited_df = st.data_editor(df_route)
-  write("Edited Dataframe:")
-  write(edited_df)
-
+  st.data_editor(df_route)
+  
 with tab3:
   st.header("Recovery")
 
