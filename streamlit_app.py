@@ -73,7 +73,7 @@ with tab3:
 
 with tab4:
   st.header("Demand")
-  st.data_editor(df_demand,num_rows="dynamic")
+  st.data_editor(df_demand_pivot,num_rows="dynamic")
 with tab5:
   st.header("Download")
   
