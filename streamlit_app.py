@@ -9,7 +9,7 @@ import zipfile
 
 
 
-tab1, tab2, tab3, tab4 = st.tabs(["Planned DT", "Routing", "Recovery","Download"])
+tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
 
 data_route = {
     "DPP": ["DPP1", "DPP2", "DPP3","DPP4"],
@@ -20,6 +20,15 @@ data_route = {
 data_planned_dt ={"Asset":["OSW-HM","OSW-HM"],
                   "Month":["April 2024","May 2024"],
                   "Hours":[72,24]}
+
+start_date = datetime.today().date()
+
+# Generate a sequence of dates for the next 18 months
+date_range = [start_date + timedelta(days=30*i) for i in range(18)]
+
+# Create a DataFrame with the dates
+df_demand = pd.DataFrame(date_range, columns=['Date'])
+
 
 df_route = pd.DataFrame(data_route)
 df_data_planned_dt=pd.DataFrame(data_planned_dt)
@@ -59,8 +68,11 @@ with tab2:
 
 with tab3:
   st.header("Recovery")
-  
+
 with tab4:
+  st.header("Demand")
+  st.data_editor(df_demand,num_rows="dynamic")
+with tab5:
   st.header("Download")
   
  
