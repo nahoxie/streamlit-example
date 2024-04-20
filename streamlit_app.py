@@ -1,4 +1,5 @@
 
+from streamlit_apex_charts import bar_chart
 import altair as alt
 import numpy as np
 import pandas as pd
@@ -79,7 +80,7 @@ with tab4:
   st.header("Demand")
   edited_demand_data= st.data_editor(df_demand_pivot,num_rows="dynamic")
   chart_demand_data = edited_demand_data.transpose().apply(pd.to_numeric, errors='coerce')
-  st.bar_chart(chart_demand_data)
+  st.bar_chart('bar chart',chart_demand_data)
 with tab5:
   st.header("Download")
   
