@@ -29,7 +29,7 @@ first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
 def download_csv(df):
-    csv {"data1.csv": df_route.to_csv(index=False), 
+    csv =  {"data1.csv": df_route.to_csv(index=False), 
           "data2.csv": csv_data_planned=df_data_planned_dt.to_csv(index=False)}
  
 
