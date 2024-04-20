@@ -33,7 +33,7 @@ second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
 with tab1:
    st.header("Planned DT")
-
+   st.data_editor(df_data_planned_dt)
   
    
 with tab2:
