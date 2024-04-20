@@ -14,7 +14,7 @@ import zipfile
 def home():
     st.title("Home Page")
     st.write("This is the home page.")
-    st.markdown("Go to [About](#about)")
+    st.markdown("Go to [Pages](#Multipage)")
 
 def about():
     st.title("About Page")
