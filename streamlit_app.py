@@ -29,11 +29,23 @@ first_filter = st.sidebar.multiselect('Select DPP',["DPP1","DPP2"])
 second_filter = st.sidebar.multiselect('Select Source',["OSW-HM"])
 
 def download_csv(df):
-    csv = df_route.to_csv(index=False).encode('utf-8')
-    csv_data_planned=df_data_planned_dt.to_csv(index=False).encode('utf-8')
-    st.download_button(label="Download data as CSV", data=csv, file_name='my_dataframe.csv', mime='text/csv')
-    st.download_button(label="Download data as CSV", data=csv_data_planned, file_name='my_dataframe.csv', mime='text/csv')
+    csv { df_route.to_csv(index=False).encode('utf-8'), 
+         csv_data_planned=df_data_planned_dt.to_csv(index=False).encode('utf-8')}
+ 
 
+
+zip_buffer = io.BytesIO()
+with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
+    for file_name, data in csv_data.items():
+        zip_file.writestr(file_name, data.encode("utf-8"))
+
+# Display a download button for the zip file
+st.download_button(
+    label="Download All DataFrames as Zip",
+    data=zip_buffer,
+    file_name="my_dataframes.zip",
+    mime="application/zip",
+)
 
 with tab1:
    st.header("Planned DT")
@@ -50,7 +62,7 @@ with tab3:
 with tab4:
   st.header("Download")
   download_csv(df_route)
-  download_csv(df_data_planned_dt)
+ 
   
 
 
