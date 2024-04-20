@@ -44,12 +44,10 @@ st.markdown(
         }
         </style>
         """
-    )
-
-    
-    button_home = st.button("Home")
-    button_about = st.button("About")
-    button_contact = st.button("Contact")
+    )  
+button_home = st.button("Home")
+button_about = st.button("About")
+button_contact = st.button("Contact")
 
 # Display the selected page based on button clicks
 if button_home:
