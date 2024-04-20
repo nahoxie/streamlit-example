@@ -33,7 +33,7 @@ def contact():
 with st.sidebar:
     selected = option_menu(
         menu_title = "Main Menu",
-        options = ["Home","Project","Contacts"])
+        options = ["Home","Project","Contacts"],)
 
 #Tabs    
 tab1, tab2, tab3, tab4,tab5 = st.tabs(["Planned DT", "Routing", "Recovery","Demand","Download"])
