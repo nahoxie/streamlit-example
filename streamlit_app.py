@@ -38,7 +38,7 @@ with tab1:
    
 with tab2:
   st.header("Routing")
-  st.experimental_data_editor(df_route)
+  edited_df = st.data_editor(df_route)
   write("Edited Dataframe:")
   write(edited_df)
 
