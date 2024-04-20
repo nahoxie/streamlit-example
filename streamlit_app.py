@@ -44,7 +44,7 @@ st.sidebar.header("Selection Criteria")
 
 csv =  {"route.csv": df_route.to_csv(index=False), 
           "data_planned_dt.csv": df_data_planned_dt.to_csv(index=False),
-        "demand_data.csv": edited_demand_data.to_csv(index=False)}
+        "demand_data.csv": df_demand_pivot.to_csv(index=False)}
  
 
 
@@ -77,7 +77,7 @@ with tab3:
 
 with tab4:
   st.header("Demand")
-  edited_demand_data = st.data_editor(df_demand_pivot,num_rows="dynamic")
+  edited_demand_data= st.data_editor(df_demand_pivot,num_rows="dynamic")
 
 with tab5:
   st.header("Download")
